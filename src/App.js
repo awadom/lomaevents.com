@@ -16,11 +16,10 @@ const Container = styled.div`
 const Title = styled.h1`
   position: relative;
   text-align: center;
-  margin-bottom: 40px;
   color: #ef3054;
   font-family: "Aclonica", sans-serif;
   font-size: 4rem;
-
+  margin-bottom: 15px;
   @media (max-width: 768px) {
     font-size: 3rem;
   }
@@ -29,9 +28,8 @@ const Title = styled.h1`
 const Hero = styled.section`
   position: relative;
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px 20px;
   color: white;
-  overflow: hidden;
   width: 100%;
 `;
 
@@ -64,7 +62,6 @@ const PlayStoreLink = styled.a`
 `;
 
 const Slider = styled.div`
-  
   position: absolute;
   top: 0;
   left: 0;
@@ -88,27 +85,26 @@ const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
   z-index: 1; /* Ensure it sits on top of the FlipCardFront */
 `;
 
 const FeatureSection = styled.section`
   padding: 40px 20px;
   width: 100%;
+  height: 300px;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 20px;
-
+  scroll-behavior: smooth;
   @media (max-width: 768px) {
-    overflow-x: hidden;
+    
   }
 `;
 
 const FlipCard = styled.div`
   background-color: transparent;
-  width: 300px;
-  height: 200px;
+  height: 100%;
   perspective: 1000px;
   scroll-snap-align: center;
 
@@ -168,11 +164,16 @@ const FlipCardBack = styled.div`
 `;
 
 const Footer = styled.footer`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 40px 20px;
   text-align: center;
   background-color: #333;
   color: white;
   width: 100%;
+  z-index: 4; /* Ensure it sits above other elements */
 `;
 
 const userStories = [
