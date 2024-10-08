@@ -1,4 +1,4 @@
-/* src/App.css */
+/* App.css */
 body {
   margin: 0;
   padding: 0;
@@ -26,4 +26,38 @@ img {
 
 * {
   box-sizing: border-box;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 span {
+    box-shadow: 10px 0 0px #edc330, -10px 0 0px #edc330;
+  }
+
+  h4 {
+    font-size: 3rem;
+  }
+
+  /* Display only one flip card and automatically slide every 5 seconds */
+  .feature-section {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .flip-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider {
+    width: 100%;
+  }
 }

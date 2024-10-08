@@ -20,6 +20,10 @@ const Title = styled.h1`
   color: #ef3054;
   font-family: "Aclonica", sans-serif;
   font-size: 4rem;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const Hero = styled.section`
@@ -32,12 +36,17 @@ const Hero = styled.section`
 `;
 
 const HeroText = styled.h2`
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
   font-size: 3rem;
   margin-bottom: 20px;
   font-family: "Aclonica", sans-serif;
   position: relative;
   z-index: 2;
   color: #ef3054;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const AppStoreLink = styled.a`
@@ -55,6 +64,7 @@ const PlayStoreLink = styled.a`
 `;
 
 const Slider = styled.div`
+  
   position: absolute;
   top: 0;
   left: 0;
@@ -77,8 +87,9 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
+  z-index: 1; /* Ensure it sits on top of the FlipCardFront */
 `;
 
 const FeatureSection = styled.section`
@@ -88,6 +99,10 @@ const FeatureSection = styled.section`
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    overflow-x: hidden;
+  }
 `;
 
 const FlipCard = styled.div`
@@ -96,6 +111,10 @@ const FlipCard = styled.div`
   height: 200px;
   perspective: 1000px;
   scroll-snap-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const FlipCardInner = styled.div`
@@ -120,14 +139,15 @@ const FlipCardFront = styled.div`
   background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-position: center;
-  color: white;
+  color: #ef3054;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   text-align: center;
-  font-size: .8rem;
+  font-size: 1.2rem;
   padding: 10px;
+  overflow: hidden; /* Ensure the overlay doesn't overflow the card */
 `;
 
 const FlipCardBack = styled.div`
@@ -144,7 +164,7 @@ const FlipCardBack = styled.div`
   border-radius: 10px;
   transform: rotateY(180deg);
   padding: 10px;
-  font-size: .8rem;
+  font-size: 2rem;
 `;
 
 const Footer = styled.footer`
@@ -195,23 +215,51 @@ const userStories = [
   },
 ];
 
+const heroImages = [
+  require("./assets/aranxa-esteve-S5DEUg2yUVU-unsplash.jpg"),
+  require("./assets/jakob-dalbjorn-cuKJre3nyYc-unsplash.jpg"),
+  require("./assets/kelly-jean-TclQHtlkzRc-unsplash.jpg"),
+  require("./assets/marvin-meyer-IB5bld_weak-unsplash.jpg"),
+  require("./assets/priscilla-du-preez-Q7wGvnbuwj0-unsplash.jpg"),
+];
+
 function App() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+  const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % userStories.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    const heroInterval = setInterval(() => {
+      setCurrentHeroIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 15000); // 15 seconds for hero images
+
+    const storyInterval = setInterval(() => {
+      setCurrentStoryIndex((prevIndex) => (prevIndex + 1) % userStories.length);
+    }, 5000); // 5 seconds for user stories
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearInterval(heroInterval);
+      clearInterval(storyInterval);
+    };
   }, []);
 
   return (
     <Container>
       <Title>LOMAevents</Title>
       <Hero>
-        <Slider style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-          {userStories.map((story, index) => (
-            <Slide key={index} bgImage={story.image}>
+        <Slider
+          style={{ transform: `translateX(-${currentHeroIndex * 100}%)` }}
+        >
+          {heroImages.map((image, index) => (
+            <Slide key={index} bgImage={image}>
               <Overlay />
             </Slide>
           ))}
@@ -230,27 +278,40 @@ function App() {
       </Hero>
 
       <FeatureSection id="features">
-        {userStories.map((story, index) => (
-          <FlipCard key={index}>
-            <FlipCardInner>
-              <FlipCardFront bgImage={story.image}>
-                <h3>{story.title}</h3>
-              </FlipCardFront>
-              <FlipCardBack>
-                <p>{story.description}</p>
-              </FlipCardBack>
-            </FlipCardInner>
-          </FlipCard>
-        ))}
+        {userStories
+          .slice(
+            currentStoryIndex * (isMobile ? 1 : 3),
+            (currentStoryIndex + 1) * (isMobile ? 1 : 3)
+          )
+          .map((story, index) => (
+            <FlipCard key={index}>
+              <FlipCardInner>
+                <FlipCardFront bgImage={story.image}>
+                  <Overlay />
+                  <h3>
+                    <span>{story.title}</span>
+                  </h3>
+                </FlipCardFront>
+                <FlipCardBack>
+                  <h4>{story.description}</h4>
+                </FlipCardBack>
+              </FlipCardInner>
+            </FlipCard>
+          ))}
       </FeatureSection>
 
-      <Footer id="contact">
-        <p>Connect with us: info@lomaevents.com</p>
-        <br></br>
-        <div>
-          <img src={appStoreImage} alt="App Store" width="120px" />
-          <img src={playStoreImage} alt="Play Store" width="120px" />
-        </div>
+      <Footer>
+        <p>© 2024 LOMAevents. All rights reserved.</p>
+        <AppStoreLink href="#appstore-link">
+          <img
+            src={appStoreImage}
+            alt="Download on the App Store"
+            width="100px"
+          />
+        </AppStoreLink>
+        <PlayStoreLink href="#playstore-link">
+          <img src={playStoreImage} alt="Get it on Google Play" width="100px" />
+        </PlayStoreLink>
       </Footer>
     </Container>
   );
