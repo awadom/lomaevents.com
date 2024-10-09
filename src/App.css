@@ -1,63 +1,149 @@
-/* App.css */
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
-p {
-  margin: 0 0 1em;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-* {
   box-sizing: border-box;
 }
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
-  }
+body {
+  font-family: "Roboto", sans-serif;
+}
 
-  h2 {
-    font-size: 2rem;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  h3 span {
-    box-shadow: 10px 0 0px #edc330, -10px 0 0px #edc330;
-  }
+nav {
+  background-color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  h4 {
-    font-size: 3rem;
-  }
+nav .logo {
+  height: 50px;
+}
 
-  /* Display only one flip card and automatically slide every 5 seconds */
-  .feature-section {
-    flex-wrap: nowrap;
-    overflow: hidden;
-  }
+nav .links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
 
-  .flip-card {
-    width: 100%;
-    height: auto;
-  }
+#hero {
+  background-image: url("./assets/antenna-ZDN-G1xBWHY-unsplash.jpg");
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+}
 
-  .slider {
-    width: 100%;
-  }
+#hero #gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#hero .hero-elements {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-elements h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-elements .slogan {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.app-links-qr-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.app-links a img {
+  height: 60px;
+  margin: 10px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.divider .line {
+  width: 50px;
+  height: 2px;
+  background-color: white;
+}
+
+.divider .center {
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.qr-container img {
+  height: 100px;
+  margin-right: 10px;
+}
+
+#usps {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#usps h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.usp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.usp img {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.usp h3 {
+  font-size: 1.5rem;
+}
+
+footer {
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .logo {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+footer .links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+footer .copyright {
+  margin-top: 10px;
 }
