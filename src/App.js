@@ -68,7 +68,7 @@ function App() {
           <h3>Organize a Seamless Corporate Workshop</h3>
           <br></br>
           <div className="usp">
-            <img src={usp1} alt="Organize a Seamless Corporate Workshop" />
+            <img src={usp1} alt="Organize a Corporate Workshop" />
             <p>From venue selection to catering options, LOMAevents ensures your corporate workshop runs without a hitch. Our tailored recommendations are designed to match your team’s needs.</p>
           </div>
           <h3>Effortlessly Plan Your Perfect Event</h3>
