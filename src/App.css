@@ -4,14 +4,30 @@
   box-sizing: border-box;
 }
 
+h1{
+  font-family: "Aclonica", sans-serif;
+  font-size: 2rem;
+  color: #ef3054;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.App {
+  text-align: center;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 nav {
@@ -27,9 +43,13 @@ nav .logo {
 }
 
 nav .links a {
-  margin: 0 10px;
+  margin: 0px 10px;
   text-decoration: none;
   color: #000;
+}
+
+.LOMAevents-icon {
+  width: 150px;
 }
 
 #hero {
@@ -37,8 +57,9 @@ nav .links a {
   background-size: cover;
   position: relative;
   text-align: center;
-  padding: 60px 20px;
+  padding: 30px 20px;
   color: white;
+  font-family: "Aclonica", sans-serif;
 }
 
 #hero #gradient {
@@ -66,13 +87,6 @@ nav .links a {
   margin-bottom: 20px;
 }
 
-.app-links-qr-code {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .app-links a img {
   height: 60px;
   margin: 10px;
@@ -95,15 +109,10 @@ nav .links a {
   font-size: 1.2rem;
 }
 
-.qr-container img {
-  height: 100px;
-  margin-right: 10px;
-}
-
 #usps {
   background-color: #f9f9f9;
   padding: 40px 20px;
-  text-align: center;
+  text-align: left;
 }
 
 #usps h2 {
@@ -113,8 +122,6 @@ nav .links a {
 
 .usp {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 20px;
 }
 
