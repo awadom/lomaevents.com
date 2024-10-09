@@ -19,11 +19,12 @@ function App() {
         <div className="container">
         <h1>LOMAevents</h1>
           <div className="links">
-            <a href="https://LOMAeventshelpcenter.zendesk.com/hc/en-us/">
-              Help Center
+            <a href="#usps">
+              About
             </a>
-            <a href="https://LOMAeventshelpcenter.zendesk.com/hc/en-us/articles/4402358258971-LOMAevents-Community-Standards">
-              Community Standards
+            <p>|</p>
+            <a href="/">
+              Contact the Founders
             </a>
           </div>
         </div>
@@ -43,7 +44,7 @@ function App() {
               <div className="app-links">
                 <a
                   onClick={() => handleDownloadEvent("android")}
-                  href="https://play.google.com/store/apps/details?id=LOMAevents.android"
+                  href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -51,7 +52,7 @@ function App() {
                 </a>
                 <a
                   onClick={() => handleDownloadEvent("iOS")}
-                  href="https://apps.apple.com/us/app/LOMAevents-messaging-chat-app/id357218860"
+                  href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -90,8 +91,8 @@ function App() {
         <div className="container">
           <img src={medialabLogo} alt="Medialab" className="logo" />
           <div className="links">
-            <a href="/privacy-policy/">Privacy Policy</a>
-            <a href="/terms-of-service/">Terms of Service</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Terms of Service</a>
           </div>
           <div className="copyright">
             Copyright © 2024 LOMAevents All Rights Reserved
