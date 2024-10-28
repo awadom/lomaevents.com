@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.apps.lomaevents",
+      "sha256_cert_fingerprints": [
+        "8C:92:2E:BD:20:2D:72:4D:D1:37:3A:CA:9A:63:76:9F:F0:58:80:B0:00:07:D0:FF:C4:89:A1:5E:BF:7A:F7:22"
+      ]
+    }
+  }
+]
