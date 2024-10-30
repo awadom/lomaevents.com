@@ -1,13 +1,16 @@
 // src/index.js
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css"; // Import your global styles
 import App from "./App"; // Import the main App component
 
-// Rendering the App component into the root div in public/index.html
+// Rendering the App component with BrowserRouter to handle routing
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
