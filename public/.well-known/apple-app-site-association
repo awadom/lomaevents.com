@@ -5,7 +5,7 @@
       {
         "appID": "com.apps.lomaevents",
         "paths": [
-          "/s/*"
+          "*"
         ]
       }
     ]
