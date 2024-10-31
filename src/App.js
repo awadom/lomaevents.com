@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-dom";
 import "./App.css";
 import googlePlayImage from "./assets/playstore.png";
 import appStoreImage from "./assets/appstore.png";
@@ -29,10 +29,10 @@ function App() {
           </div>
         </nav>
 
-        <Switch>
-          <Route path="/s/:eventId" component={EventPage} />
-          <Route path="/" component={HomePage} />
-        </Switch>
+        <Routes>
+          <Route path="/s/:eventId" element={<EventPage />} />
+          <Route path="/" element={<HomePage handleDownloadEvent={handleDownloadEvent} />} />
+        </Routes>
 
         <footer>
           <div className="container">
@@ -58,7 +58,7 @@ function App() {
   );
 }
 
-function HomePage() {
+function HomePage({ handleDownloadEvent }) {
   return (
     <div>
       <div id="hero">
