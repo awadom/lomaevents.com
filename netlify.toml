@@ -1,11 +1,4 @@
 [[headers]]
-  for = "/apple-app-site-association"
-  [headers.values]
-    Cache-Control = "public, max-age=0"
-    Content-Type = "application/json"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
   for = "/.well-known/apple-app-site-association"
   [headers.values]
     Cache-Control = "public, max-age=0"
@@ -19,14 +12,9 @@
     Content-Type = "application/json"
     X-Content-Type-Options = "nosniff"
 
+# Redirect deep links to the index for the React Router to handle
 [[redirects]]
-  from = "/apple-app-site-association"
-  to = "/.well-known/apple-app-site-association"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/.well-known/apple-app-site-association"
-  to = "/.well-known/apple-app-site-association"
+  from = "/s/*"
+  to = "/index.html"
   status = 200
   force = true
