@@ -1,20 +1,10 @@
-[[headers]]
-  for = "/.well-known/apple-app-site-association"
-  [headers.values]
-    Cache-Control = "public, max-age=0"
-    Content-Type = "application/json"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/.well-known/assetlinks.json"
-  [headers.values]
-    Cache-Control = "public, max-age=0"
-    Content-Type = "application/json"
-    X-Content-Type-Options = "nosniff"
-
-# Redirect deep links to the index for the React Router to handle
 [[redirects]]
-  from = "/s/*"
-  to = "/index.html"
+  from = "/.well-known/*"
+  to = "/.well-known/:splat"
   status = 200
   force = true
+
+[[headers]]
+  for = "/.well-known/*"
+  [headers.values]
+    Content-Type = "application/json" # or "text/plain" depending on your file type
