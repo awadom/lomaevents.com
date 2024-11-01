@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/s/*"
-  to = "https://lomaevents.com/s/:splat"
+  to = "lomaevents://s/:splat"
   status = 302
   force = true
