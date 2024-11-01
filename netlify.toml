@@ -1,3 +1,4 @@
+# Redirect configuration for .well-known directory
 [[redirects]]
   from = "/.well-known/*"
   to = "/.well-known/:splat"
@@ -7,4 +8,12 @@
 [[headers]]
   for = "/.well-known/*"
   [headers.values]
-    Content-Type = "application/json" # or "text/plain" depending on your file type
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "application/json" # or "text/plain"
+
+# Redirect for deep linking
+[[redirects]]
+  from = "/s/*"
+  to = "myapp://s/:splat"
+  status = 302
+  force = true
