@@ -1,6 +1,6 @@
 # Redirect for deep linking
 [[redirects]]
   from = "/s/*"
-  to = "myapp://s/:splat"
+  to = "lomaevents://s/:splat"
   status = 302
   force = true
