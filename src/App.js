@@ -102,8 +102,8 @@ function App() {
         <div className="container">
           <img src={medialabLogo} alt="Medialab" className="logo" />
           <div className="links">
-            <a href="/">Privacy Policy</a>
-            <a href="/">Terms of Service</a>
+            <a href="/privacy-policy.md">Privacy Policy</a>
+            <a href="/TERMS_OF_SERVICE.md">Terms of Service</a>
           </div>
           <div className="copyright">
             Copyright © 2024 LOMAevents All Rights Reserved

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.66afae57.css",
-    "main.js": "/static/js/main.eda2ef88.js",
+    "main.js": "/static/js/main.8555f260.js",
     "static/media/antenna-ZDN-G1xBWHY-unsplash.jpg": "/static/media/antenna-ZDN-G1xBWHY-unsplash.7477cfa81acd263887d2.jpg",
     "static/media/logo.png": "/static/media/logo.0ac4a14ab5b431a85151.png",
     "static/media/party.png": "/static/media/party.b9fe8849877e684ae2d6.png",
@@ -11,10 +11,10 @@
     "static/media/appstore.png": "/static/media/appstore.92125a4f894c307ea5ad.png",
     "index.html": "/index.html",
     "main.66afae57.css.map": "/static/css/main.66afae57.css.map",
-    "main.eda2ef88.js.map": "/static/js/main.eda2ef88.js.map"
+    "main.8555f260.js.map": "/static/js/main.8555f260.js.map"
   },
   "entrypoints": [
     "static/css/main.66afae57.css",
-    "static/js/main.eda2ef88.js"
+    "static/js/main.8555f260.js"
   ]
 }

@@ -1,3 +1,14 @@
+<!-- NOTE: This lowercase filename was added so that https://lomaevents.com/privacy_policy.md works on case-sensitive hosting. The canonical content is identical to PRIVACY_POLICY.md. -->
+
+# Privacy Policy for LOMAevents
+
+_Duplicate of `PRIVACY_POLICY.md` (added for lowercase URL convenience)._
+
+> If you modify this file, also update `PRIVACY_POLICY.md` or replace that file and remove this notice.
+
+**Effective Date: July 8, 2025**
+
+For the full formatted version see `PRIVACY_POLICY.md` (same content). This duplicate exists so users who type a lowercase URL still reach the policy.
 # Privacy Policy for LOMAevents
 
 **Effective Date: July 8, 2025**
