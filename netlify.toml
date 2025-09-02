@@ -1,3 +1,4 @@
+## Temporary: deep link pattern. Once Firebase links subdomain is live, remove this.
 [[redirects]]
   from = "/s/*"
   to = "lomaevents://s/:splat"

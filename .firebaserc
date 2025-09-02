@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "lomaevents-apps"
+  },
+  "targets": {
+    "lomaevents-apps": {
+      "hosting": {
+        "links": ["links"]
+      }
+    }
+  }
+}

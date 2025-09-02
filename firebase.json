@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "web",
+      "public": "build",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "redirects": [
+        { "source": "/support", "destination": "/support.html", "type": 301 }
+      ]
+    },
+    {
+      "target": "links",
+      "public": "public", 
+      "rewrites": [
+        { "source": "/s/**", "dynamicLinks": true }
+      ]
+    }
+  ]
+}
