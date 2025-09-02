@@ -3,3 +3,9 @@
   to = "lomaevents://s/:splat"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/support"
+  to = "/support.html"
+  status = 200
+  force = true
