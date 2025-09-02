@@ -23,6 +23,8 @@ function App() {
             <a href="#usps">About</a>
             <p>|</p>
             <a href="/">Contact the Founders</a>
+            <p>|</p>
+            <a href="/support.html">Support</a>
           </div>
         </div>
       </nav>
@@ -104,6 +106,7 @@ function App() {
           <div className="links">
             <a href="/privacy-policy.md">Privacy Policy</a>
             <a href="/TERMS_OF_SERVICE.md">Terms of Service</a>
+            <a href="/support.html">Support</a>
           </div>
           <div className="copyright">
             Copyright © 2024 LOMAevents All Rights Reserved
